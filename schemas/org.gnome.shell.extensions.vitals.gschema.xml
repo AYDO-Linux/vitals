@@ -200,6 +200,11 @@
       <summary>Processor usage color thresholds</summary>
       <description>Color rules matched against processor usage percentage. Entries are "threshold r g b" or "threshold r g b sensor:&lt;key&gt;". Unknown sensor keys are ignored.</description>
     </key>
+    <key name="storage-colors" type="as">
+      <default>[]</default>
+      <summary>Storage usage color thresholds</summary>
+      <description>Color rules matched against storage used percentage; Free is colored by the same value. Entries are "threshold r g b" or "threshold r g b sensor:&lt;key&gt;". Unknown sensor keys are ignored.</description>
+    </key>
     <key name="system-colors" type="as">
       <default>[]</default>
       <summary>System load color thresholds</summary>

@@ -51,6 +51,7 @@ export const Values = GObject.registerClass({
 
         this._networkSpeedOffset = {};
         this._networkSpeeds = {};
+        this._storageUsedPercent = null;
 
         this._history = {};
         this.resetHistory();
@@ -238,6 +239,14 @@ export const Values = GObject.registerClass({
     }
 
     _styleFor(numeric, type, format, sensorKey = null) {
+        // Free space shrinks as the disk fills, so color it by Used % instead
+        if (type === 'storage' && format === 'percent') {
+            this._storageUsedPercent = numeric;
+        } else if (type === 'storage' && sensorKey === '_storage_free_') {
+            numeric = this._storageUsedPercent;
+            format = 'percent';
+        }
+
         let colorsKey = colorsKeyForSensor(type, format);
         if (!colorsKey || numeric === null || !Number.isFinite(numeric))
             return '';

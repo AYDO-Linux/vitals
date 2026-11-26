@@ -433,8 +433,9 @@ export const Sensors = GObject.registerClass({
         this._returnValue(callback, 'Total', total, 'storage', 'storage');
         this._returnValue(callback, 'Used', used, 'storage', 'storage');
         this._returnValue(callback, 'Reserved', reserved, 'storage', 'storage');
+        // Used % goes first so Free can be colored by it
+        this._returnValue(callback, 'Used %', usedPercent / 100, 'storage', 'percent');
         this._returnValue(callback, 'Free', avail, 'storage', 'storage');
-        this._returnValue(callback, 'Used %', usedPercent + '%', 'storage', 'string');
         this._returnValue(callback, 'Free %', freePercent + '%', 'storage', 'string');
         this._returnValue(callback, 'storage', avail, 'storage-group', 'storage');
     }
