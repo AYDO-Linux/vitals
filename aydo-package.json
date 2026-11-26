@@ -1,0 +1,15 @@
+{
+  "name": "vitals",
+  "version": "86.1.0",
+  "description": "Vitals (corecoding/Vitals) with AYDO changes: storage colored by used percentage. Installed and updated through aydo-ext.",
+  "uuid": "Vitals@CoreCoding.com",
+  "src": ".",
+  "exclude": ["README.md", "AGENTS.md", "howtouse.gif", "tools/*", "locale/*.po", "locale/*.pot", "schemas/gschemas.compiled"],
+  "requires": [
+    {"check": "ls /usr/lib/girepository-1.0/GTop-2.0.typelib /usr/lib64/girepository-1.0/GTop-2.0.typelib /usr/lib/*/girepository-1.0/GTop-2.0.typelib 2>/dev/null | grep -q .",
+     "label": "GTop (storage statistics)", "apt": "gir1.2-gtop-2.0", "dnf": "libgtop2", "pacman": "libgtop"}
+  ],
+  "optional": [
+    {"command": "sensors", "label": "lm-sensors (extra temperature and fan sensors)", "apt": "lm-sensors", "dnf": "lm_sensors", "pacman": "lm_sensors"}
+  ]
+}

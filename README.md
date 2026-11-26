@@ -1,3 +1,9 @@
+> **AYDO-Linux fork.** This is [corecoding/Vitals](https://github.com/corecoding/Vitals) with a few
+> AYDO changes, listed in [CHANGELOG.md](CHANGELOG.md). Install and update it with
+> `aydo-ext install vitals` (see [aydo-extensions](https://github.com/AYDO-Linux/aydo-extensions)).
+> The default branch `aydo` holds the changes; `main` follows upstream. To pick up a new upstream
+> release: `git fetch upstream --tags && git merge vX.Y.Z` on `aydo`, then `aydo-ext release`.
+
 Vitals
 ====================================
 
